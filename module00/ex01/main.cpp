@@ -9,7 +9,8 @@ int main()
 
 	while (1)
 	{
-		std::cin >> cmd;
+		std::cout << "Please enter a command : ";
+		getline(std::cin, cmd);
 		if (cmd.compare("ADD") == 0)
 		{
 			phonebook.add(idx);
@@ -17,11 +18,13 @@ int main()
 			if (idx == 8)
 				idx = 0;
 		}
-		if (cmd.compare("SEARCH") == 0)
+		else if (cmd.compare("SEARCH") == 0)
 		{
 			phonebook.search();
 		}
-		if (cmd.compare("EXIT") == 0)
+		else if (cmd.compare("EXIT") == 0)
 			break;	
+		else
+			std::cout << "Invalid command Please enter it again" << std::endl;
 	}
 }

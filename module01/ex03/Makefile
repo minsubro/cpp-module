@@ -1,8 +1,11 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = megaphone.cpp
+SRCS = HumanA.cpp	\
+	   HumanB.cpp	\
+	   main.cpp		\
+	   weapon.cpp	
 
-NAME = megaphone
+NAME = a.out
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
 
