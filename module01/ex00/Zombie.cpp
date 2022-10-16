@@ -6,7 +6,7 @@
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:56:56 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/14 12:28:33 by minsukan         ###   ########.fr       */
+/*   Updated: 2022/10/14 20:07:04 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	Zombie::set_name(std::string name) {
 
 void	Zombie::die() {
 	std::cout << Zombie::name << " is die" << std::endl;
-	delete this;
+	// delete this;
 }

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 14:12:18 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/15 13:03:55 by minsukan         ###   ########.fr       */
+/*   Created: 2022/10/16 00:57:00 by minsukan          #+#    #+#             */
+/*   Updated: 2022/10/16 02:14:17 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main()
-{
-	int n = 5;
-	Zombie	*zombies = zombieHorde(n, "zombie");
-	for(int i = 0; i<5; i++) {
-		zombies[i].announce();
-	}
-	delete[] zombies;
-}
+# include <iostream>
+
+class Harl {
+	private :
+		void	debug();
+		void	info();
+		void	warning();
+		void	error(void);
+	public :
+		void	complain(std::string level);
+};
+
+#endif

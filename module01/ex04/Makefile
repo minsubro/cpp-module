@@ -1,9 +1,6 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
-SRCS = HumanA.cpp	\
-	   HumanB.cpp	\
-	   main.cpp		\
-	   Weapon.cpp	
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = main.cpp
 
 NAME = a.out
 OBJS = $(SRCS:.cpp=.o)
@@ -12,7 +9,7 @@ RM = rm -f
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $(NAME)
+	$(CC) $^ -o $(NAME)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $^ -o $@

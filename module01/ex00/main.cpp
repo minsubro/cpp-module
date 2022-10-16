@@ -6,7 +6,7 @@
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:26:13 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/14 14:03:05 by minsukan         ###   ########.fr       */
+/*   Updated: 2022/10/14 20:07:09 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@ int main()
 {
 	Zombie *zombie = newZombie("bb");
 	zombie->announce();
-	zombie->die();
+	// zombie->die();
+	zombie = newZombie("cc");
+	zombie = newZombie("d");
+	zombie = newZombie("e");
 	randomChump("cc");
+	while (1);
 	system("leaks Zombie");
 }

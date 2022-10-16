@@ -6,7 +6,7 @@
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 17:57:02 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/14 18:50:35 by minsukan         ###   ########.fr       */
+/*   Updated: 2022/10/15 17:57:58 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ class Weapon {
 	private :
 		std::string type;
 	public :
+		Weapon(){}
+		Weapon(std::string type);
 		const std::string&	getType();
 		void				setType(std::string type);
 };

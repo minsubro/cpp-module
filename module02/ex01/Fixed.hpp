@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 14:12:18 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/15 13:03:55 by minsukan         ###   ########.fr       */
+/*   Created: 2022/10/16 17:26:04 by minsukan          #+#    #+#             */
+/*   Updated: 2022/10/16 17:32:18 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+# define FINXED_HPP
 
-int main()
-{
-	int n = 5;
-	Zombie	*zombies = zombieHorde(n, "zombie");
-	for(int i = 0; i<5; i++) {
-		zombies[i].announce();
-	}
-	delete[] zombies;
-}
+# include <iostream>
+
+class Fixed {
+	private :
+		int					num;
+		static const int	bit = 8;
+	public :
+		Fixed();
+		Fixed(const Fixed& origin);
+		Fixed& operator=(const Fixed& origin);
+		~Fixed();
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		
+};
+
+#endif

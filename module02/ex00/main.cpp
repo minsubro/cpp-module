@@ -5,19 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 14:12:18 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/15 13:03:55 by minsukan         ###   ########.fr       */
+/*   Created: 2022/10/16 05:10:29 by minsukan          #+#    #+#             */
+/*   Updated: 2022/10/16 10:41:25 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
 int main()
 {
-	int n = 5;
-	Zombie	*zombies = zombieHorde(n, "zombie");
-	for(int i = 0; i<5; i++) {
-		zombies[i].announce();
-	}
-	delete[] zombies;
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
+
+	c = b;
+
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	
+	return 0;
 }

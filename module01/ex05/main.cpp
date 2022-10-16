@@ -5,19 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 14:12:18 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/15 13:03:55 by minsukan         ###   ########.fr       */
+/*   Created: 2022/10/16 02:01:50 by minsukan          #+#    #+#             */
+/*   Updated: 2022/10/16 02:02:54 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
 int main()
 {
-	int n = 5;
-	Zombie	*zombies = zombieHorde(n, "zombie");
-	for(int i = 0; i<5; i++) {
-		zombies[i].announce();
-	}
-	delete[] zombies;
+	Harl	harl;
+
+	harl.complain("debug");
+	harl.complain("info");
+	harl.complain("warning");
+	harl.complain("error");
+	harl.complain("abcd");
 }

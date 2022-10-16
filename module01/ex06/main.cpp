@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 14:12:18 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/15 13:03:55 by minsukan         ###   ########.fr       */
+/*   Created: 2022/10/16 02:27:29 by minsukan          #+#    #+#             */
+/*   Updated: 2022/10/16 02:28:56 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-	int n = 5;
-	Zombie	*zombies = zombieHorde(n, "zombie");
-	for(int i = 0; i<5; i++) {
-		zombies[i].announce();
+	if (ac != 2) {
+		std::cout << "Invalid argument...." << std::endl;
+		return (0);
 	}
-	delete[] zombies;
+	Harl harl;
+	harl.complain(av[1]);
 }
