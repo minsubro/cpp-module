@@ -6,7 +6,7 @@
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:05:51 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/24 19:00:32 by minsukan         ###   ########.fr       */
+/*   Updated: 2022/10/24 21:20:40 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const Fixed& origin) {
 	this->num = origin.num;
 }
 
-Fixed& Fixed::operator = (const Fixed& origin) {
+Fixed &Fixed::operator = (const Fixed& origin) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->num = origin.num;
 	return	*this;
@@ -88,28 +88,27 @@ bool	Fixed::operator!=(Fixed &s1) {
 	return this->num != s1.num;
 }
 
-Fixed	Fixed::operator+(Fixed &s1) {
-	Fixed Fixed;
-	Fixed.num = this->getRawBits() + s1.getRawBits();
-	return (Fixed);
+Fixed	Fixed::operator+(Fixed s1) {
+	Fixed tmp;
+	tmp.num = this->toFloat() + s1.toFloat();
+	return (tmp);
 }
 
-Fixed	Fixed::operator-(Fixed &s1) {
-	Fixed Fixed;
-	Fixed.num = this->getRawBits() - s1.getRawBits();
-	return (Fixed);
+Fixed	Fixed::operator-(Fixed s1) {
+	Fixed fixed;
+	fixed.num = this->toFloat() - s1.toFloat();
+	return (fixed);
 }
 
-Fixed	Fixed::operator/(Fixed &s1) {
-	Fixed Fixed;
-	Fixed.num = this->getRawBits() / s1.getRawBits();
-	return (Fixed);
+Fixed	Fixed::operator/(Fixed s1) {
+	Fixed fixed;
+	fixed.num = this->toFloat() / s1.toFloat();
+	return (fixed);
 }
 
-Fixed	Fixed::operator*(Fixed &s1) {
-	Fixed Fixed;
-	Fixed.num = this->getRawBits() * s1.getRawBits();
-	return (Fixed);
+Fixed	Fixed::operator*(Fixed s1) {
+	Fixed fixed(this->toFloat() * s1.toFloat());
+	return (fixed);
 }
 
 Fixed&	Fixed::operator++() {
