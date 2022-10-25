@@ -6,7 +6,7 @@
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:33:41 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/16 17:33:44 by minsukan         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:54:13 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,24 @@ Fixed::Fixed() {
 	Fixed::num = 0;
 }
 
+Fixed::Fixed(int num) {
+	std::cout << "Int constructor called" << std::endl;
+	this->num = num << this->bit;
+}
+
+Fixed::Fixed(float num) {
+	std::cout << "Float constructor called" << std::endl;
+	this->num = roundf(num * (1<<this->bit));
+}
+
 Fixed::Fixed(const Fixed& origin) {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = origin;
+	this->num = origin.num;
 }
 
 Fixed& Fixed::operator = (const Fixed& origin) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->setRawBits(origin.getRawBits());
+	this->num = origin.num;
 	return	*this;
 }
 
@@ -39,4 +49,17 @@ int	Fixed::getRawBits() const {
 
 void	Fixed::setRawBits(int const raw) {
 	std::cout << "setRawBits member function called" << std::endl;
+}
+
+int	Fixed::toInt() const {
+	return this->num >> 8;
+}
+
+float	Fixed::toFloat() const {
+	return (((float)this->num) / 256);
+}
+
+std::ostream& operator << (std::ostream &out, Fixed const &fixed) {
+		out << fixed.toFloat();
+		return out;
 }

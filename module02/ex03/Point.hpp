@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 17:26:04 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/24 13:45:01 by minsukan         ###   ########.fr       */
+/*   Created: 2022/10/25 12:50:10 by minsukan          #+#    #+#             */
+/*   Updated: 2022/10/25 19:57:35 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
-# include <iostream>
+#include "Fixed.hpp"
 
-class Fixed {
+class Point {
 	private :
-		int					num;
-		static const int	bit = 8;
+		const Fixed x;
+		const Fixed y;
 	public :
-		Fixed();
-		Fixed(int num);
-		Fixed(float num);
-		Fixed(const Fixed& origin);
-		Fixed& operator=(const Fixed& origin);
-		~Fixed();
-		int		toInt() const;
-		float	toFloat() const;
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-		friend std::ostream& operator << (std::ostream &out, Fixed const &fixed);
-		
+		Point();
+		Point(const float x, const float y);
+		Point(const Point& origin);
+		Point& operator=(const Point& origin);
+		~Point() {};
+		float getxfloat() const;
+		float getyfloat() const;
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
