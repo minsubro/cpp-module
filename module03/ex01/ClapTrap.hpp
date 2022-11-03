@@ -16,12 +16,13 @@
 # include <iostream>
 
 class ClapTrap {
-	private :
+	protected :
 		std::string	name;
 		long long 	Hit_Point;
 		long long 	Energy_point;
 		long long	Attack_damage;
 	public :
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap&);
 		ClapTrap& operator=(const ClapTrap&);

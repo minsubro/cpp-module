@@ -12,6 +12,14 @@
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() {
+	ClapTrap::name = "minsu";
+	ClapTrap::Hit_Point = 0;
+	ClapTrap::Energy_point = 0;
+	ClapTrap::Attack_damage = 0;
+	std::cout << "Default constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) {
 	this->name = name;
 	this->Hit_Point = 10;
@@ -62,11 +70,11 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if(this->Hit_Point <= 0) {
-		std::cout << "Hit point is not enough" << std::endl;
+		std::cout << this->name << "Hit point is not enough" << std::endl;
 		return ;
 	}
 	else if (this->Energy_point <= 0) {
-		std::cout << "Energy is not enough" << std::endl;
+		std::cout << this->name << "Energy is not enough" << std::endl;
 		return ;
 	}
 	Hit_Point += amount;

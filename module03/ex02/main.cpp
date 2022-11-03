@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 12:04:50 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/26 14:56:13 by minsukan         ###   ########.fr       */
+/*   Created: 2022/10/26 11:28:24 by minsukan          #+#    #+#             */
+/*   Updated: 2022/10/26 12:10:20 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "FragTrap.hpp"
 
-#include "ClapTrap.hpp"
+int main()
+{
+	FragTrap a("a");
+	FragTrap b(a);
+	FragTrap c;
+	c = b;
 
-class ScavTrap : public ClapTrap {
-	public :
-		ScavTrap();
-		ScavTrap(const std::string& name);
-		~ScavTrap();
-		ScavTrap(const ScavTrap& origin);
-		ScavTrap& operator=(const ScavTrap& origin);
-		void	guardGate();
-		void	attack(const std::string& name);
-};
-
-#endif
+	a.attack("b");
+	//a.beRepaired(200);
+	a.guardGate();
+	a.highFivesGuys();
+	a.takeDamage(99);
+	a.attack("b");
+	a.takeDamage(1);
+	a.attack("b");
+}

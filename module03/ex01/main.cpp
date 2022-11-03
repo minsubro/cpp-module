@@ -15,5 +15,14 @@
 int main()
 {
 	ScavTrap a("a");
+	ScavTrap b(a);
+	ScavTrap c;
+	c = b;
+
+	a.attack("b");
+	a.beRepaired(200);
+	a.guardGate();
+	a.takeDamage(99);
+	a.attack("b");
 		
 }
