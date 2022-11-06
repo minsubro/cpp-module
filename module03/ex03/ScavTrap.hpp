@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 11:28:24 by minsukan          #+#    #+#             */
-/*   Updated: 2022/11/06 14:08:37 by minsukan         ###   ########.fr       */
+/*   Created: 2022/10/26 12:04:50 by minsukan          #+#    #+#             */
+/*   Updated: 2022/11/06 14:03:03 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main()
-{
-	FragTrap a("a");
-	std::cout << "--------------------" << std::endl;
-	FragTrap b(a);
-	std::cout << "--------------------" << std::endl;
-	FragTrap c;
-	std::cout << "--------------------" << std::endl;
-	c = b;
+#include "ClapTrap.hpp"
 
-	a.attack("b");
-	//a.beRepaired(200);
-	a.highFivesGuys();
-	a.highFivesGuys();
-	a.takeDamage(99);
-	a.attack("b");
-	a.takeDamage(1);
-	a.attack("b");
-}
+class ScavTrap : public virtual ClapTrap {
+	public :
+		ScavTrap();
+		ScavTrap(const std::string& name);
+		~ScavTrap();
+		ScavTrap(const ScavTrap& origin);
+		ScavTrap& operator=(const ScavTrap& origin);
+		void	guardGate();
+		void	attack(const std::string& name);
+};
+
+#endif
