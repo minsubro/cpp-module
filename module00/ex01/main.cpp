@@ -7,24 +7,26 @@ int main()
 	PhoneBook phonebook;
 	int idx = 0;
 
-	while (1)
+	std::cout << "Please enter a command : ";
+	while (getline(std::cin, cmd))
 	{
-		std::cout << "Please enter a command : ";
-		getline(std::cin, cmd);
-		if (cmd.compare("ADD") == 0)
+		if (!(cmd.compare("ADD")) || !(cmd.compare("add")))
 		{
-			phonebook.add(idx);
+			if (!phonebook.add(idx))
+				return (0);
 			idx++;
 			if (idx == 8)
 				idx = 0;
 		}
-		else if (cmd.compare("SEARCH") == 0)
+		else if (!(cmd.compare("SEARCH")) || !(cmd.compare("search")))
 		{
-			phonebook.search();
+			if (!phonebook.search())
+				return (0);
 		}
-		else if (cmd.compare("EXIT") == 0)
+		else if (!(cmd.compare("EXIT")) || !(cmd.compare("exit")))
 			break;	
 		else
 			std::cout << "Invalid command Please enter it again" << std::endl;
+		std::cout << "Please enter a command : ";
 	}
 }
