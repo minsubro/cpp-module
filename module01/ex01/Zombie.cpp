@@ -20,7 +20,6 @@ void	Zombie::set_name(std::string name) {
 	Zombie::name = name;
 }
 
-void	Zombie::die() {
-	std::cout << Zombie::name << " is die" << std::endl;
-	delete this;
+Zombie::~Zombie() {
+	std::cout << this->name << " is die" << std::endl; 
 }

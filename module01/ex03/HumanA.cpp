@@ -17,6 +17,11 @@ void	HumanA::attack()
 	std::cout << HumanA::name << " attacks with their " << HumanA::weapon.getType() << std::endl;
 }
 
-HumanA::HumanA(std::string name, Weapon& weapon):
-	name(name),
-	weapon(weapon) {}
+HumanA::HumanA(std::string name, Weapon& weapon): name(name), weapon(weapon) 
+{
+	std::cout << "Human A constructor" << std::endl;
+}
+
+HumanA::~HumanA() {
+	std:: cout << "Human A destructor" << std::endl;
+}

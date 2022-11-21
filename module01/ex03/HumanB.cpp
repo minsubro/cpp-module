@@ -25,7 +25,11 @@ void	HumanB::setWeapon(Weapon& weapon)
 	HumanB::weapon = &weapon;
 }
 
-HumanB::HumanB(std::string name):
-	name(name),
-	weapon(NULL)
-{}
+HumanB::HumanB(std::string name) : name(name), weapon(NULL)
+{
+	std::cout << "Human B constructor";
+}
+
+HumanB::~HumanB() {
+	std:: cout << "Human B destructor" << std::endl;
+}

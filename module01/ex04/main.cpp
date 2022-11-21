@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
+#include "mystd.hpp"
 
 int main(int ac, char **av)
 {
@@ -19,26 +18,6 @@ int main(int ac, char **av)
 		std::cout << "Invalid argument...." << std::endl;
 		return (0);
 	}
-	std::string filename(av[1]);
-	std::ifstream infile(filename, std::ios_base::in);
-	if (!infile) {
-		std::cout << "Failed to open for infile...." << std::endl;
-		return (0);	
-	}
-	std::ofstream outfile(filename + ".replace");
-	if (!outfile) {
-		std::cout << "Failed to opne for outfile..." << std::endl;
-		return (0); 
-	}
-	std::string infile_temp;
-	infile >> infile_temp;
-	int idx;
-	while (1)
-	{
-		idx = infile_temp.find(av[2]);
-		if (idx == -1)
-			break ;
-		infile_temp = infile_temp.substr(0, idx) + av[3] + infile_temp.substr(idx + 1, infile_temp.size());
-	}
-	outfile << infile_temp;
+	mystd::replace(av[1], av[2], av[3]);
+	return (0);
 }

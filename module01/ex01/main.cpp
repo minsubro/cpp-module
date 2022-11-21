@@ -14,10 +14,11 @@
 
 int main()
 {
-	int n = 5;
-	Zombie	*zombies = zombieHorde(n, "zombie");
-	for(int i = 0; i<5; i++) {
+	int n = 100;
+	Zombie	*zombies = zombieHorde(n, "minsukan");
+	for(int i = 0; i<n; i++) {
 		zombies[i].announce();
 	}
 	delete[] zombies;
+	system("leaks Zombie");
 }

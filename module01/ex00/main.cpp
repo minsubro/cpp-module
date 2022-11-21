@@ -16,11 +16,17 @@ int main()
 {
 	Zombie *zombie = newZombie("bb");
 	zombie->announce();
-	// zombie->die();
+	delete zombie;
 	zombie = newZombie("cc");
+	zombie->announce();
+	delete zombie;
 	zombie = newZombie("d");
+	zombie->announce();
+	delete zombie;
 	zombie = newZombie("e");
+	zombie->announce();
+	delete zombie;
 	randomChump("cc");
-	while (1);
+	randomChump("minsukan!");
 	system("leaks Zombie");
 }
