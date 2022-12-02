@@ -22,9 +22,10 @@ class Point {
 	public :
 		Point();
 		Point(const float x, const float y);
+		Point(const int x, const int y);
 		Point(const Point& origin);
 		Point& operator=(const Point& origin);
-		~Point() {};
+		~Point();
 		float getxfloat() const;
 		float getyfloat() const;
 };

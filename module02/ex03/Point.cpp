@@ -12,17 +12,29 @@
 
 #include "Point.hpp"
 
-Point::Point() :
-	x(0),
-	y(0) {}
+Point::Point() : x(0), y(0) {
+	std::cout << "Point default constructor called" << std::endl;
+}
 
 Point::Point(const float x, const float y) :
 	x(x),
-	y(y) {}
+	y(y) {
+		std::cout << "Point constructor called" << std::endl;
+	}
+
+Point::Point(const int x, const int y) : x(x), y(y) {
+	std::cout << "Point int constructor called" << std::endl;
+}
 
 Point::Point(const Point& origin) :
 	x(origin.x),
-	y(origin.y) {}
+	y(origin.y) {
+		std::cout << "Point Copy constructor called" << std::endl;
+	}
+
+Point::~Point() {
+	std::cout << "Point destructor called" << std::endl;
+}
 
 Point& Point::operator=(const Point& origin) {
 	(void)origin;
