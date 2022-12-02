@@ -49,7 +49,6 @@ class Fixed {
 		static const Fixed&	min(const Fixed&, const Fixed&);
 		static Fixed&	max(Fixed&, Fixed&);
 		static const Fixed&	max(const Fixed&, const Fixed&);
-		
 };
 
 #endif

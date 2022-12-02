@@ -35,7 +35,5 @@ int main(void)
 	std::cout << Fixed::min(a, b) << std::endl;
 	std::cout << Fixed::min(b, c) << std::endl;
 	
-
-
 	return 0;
 }

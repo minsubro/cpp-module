@@ -12,19 +12,18 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() {
+Fixed::Fixed() : num(0) {
 	std::cout << "Default constructor called" << std::endl;
-	Fixed::num = 0;
 }
 
 Fixed::Fixed(const Fixed& origin) {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = origin;
+	this->num = origin.getRawBits();
 }
 
 Fixed& Fixed::operator = (const Fixed& origin) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->setRawBits(origin.getRawBits());
+	this->num = origin.getRawBits();
 	return	*this;
 }
 
