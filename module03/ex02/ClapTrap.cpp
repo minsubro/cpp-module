@@ -13,9 +13,9 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-	ClapTrap::name = "minsu";
-	ClapTrap::Hit_Point = 0;
-	ClapTrap::Energy_point = 0;
+	ClapTrap::name = "default";
+	ClapTrap::Hit_Point = 10;
+	ClapTrap::Energy_point = 10;
 	ClapTrap::Attack_damage = 0;
 	std::cout << "ClapTrap Default constructor called" << std::endl;
 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(std::string name) {
 	this->Hit_Point = 10;
 	this->Energy_point = 10;
 	this->Attack_damage = 0;
-	std::cout << "CalpTrap Default constructor called" << std::endl;
+	std::cout << "CalpTrap name constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
@@ -52,11 +52,11 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& origin) {
 
 void	ClapTrap::attack(const std::string& target) {
 	if(this->Hit_Point <= 0) {
-		std::cout << "Hit point is not enough" << std::endl;
+		std::cout << this->name << " Hit point is not enough" << std::endl;
 		return ;
 	}
 	else if (this->Energy_point <= 0) {
-		std::cout << "Energy is not enough" << std::endl;
+		std::cout << this->name << " Energy is not enough" << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->Attack_damage << " points of damage!" << std::endl;

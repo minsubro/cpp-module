@@ -23,7 +23,7 @@ int main()
 	c = b;
 
 	a.attack("b");
-	//a.beRepaired(200);
+	a.beRepaired(200);
 	a.highFivesGuys();
 	a.highFivesGuys();
 	a.takeDamage(99);

@@ -21,7 +21,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap Default constructor called" << std::endl;
+	std::cout << "ScavTrap name constructor called" << std::endl;
 	ScavTrap::Hit_Point = 100;
 	ScavTrap::Energy_point = 50;
 	ScavTrap::Attack_damage = 20;
@@ -36,7 +36,7 @@ ScavTrap::ScavTrap(const ScavTrap& origin) {
 	this->Hit_Point = origin.Hit_Point;
 	this->Energy_point = origin.Energy_point;
 	this->Attack_damage = Attack_damage;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& origin) {
@@ -50,10 +50,10 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& origin) {
 
 void ScavTrap::guardGate() {
 	if (this->Hit_Point == 0) {
-		std::cout << this->name << "Hit point is not enough" << std::endl;
+		std::cout << this->name << " Hit point is not enough" << std::endl;
 	}
 	else if (this->Energy_point == 0) {
-		std::cout << this->name << "Energy point is not enough" << std::endl;
+		std::cout << this->name << " Energy point is not enough" << std::endl;
 	}
 	else
 		std::cout << this->name << " is Gate Keeper mode" << std::endl;
@@ -61,11 +61,11 @@ void ScavTrap::guardGate() {
 
 void	ScavTrap::attack(const std::string& target) {
 	if(this->Hit_Point <= 0) {
-		std::cout << this->name << "Hit point is not enough" << std::endl;
+		std::cout << this->name << " Hit point is not enough" << std::endl;
 		return ;
 	}
 	else if (this->Energy_point <= 0) {
-		std::cout << this->name << "Energy is not enough" << std::endl;
+		std::cout << this->name << " Energy is not enough" << std::endl;
 		return ;
 	}
 	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->Attack_damage << " points of damage!" << std::endl;

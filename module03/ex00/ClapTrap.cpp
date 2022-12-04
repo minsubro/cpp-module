@@ -14,8 +14,8 @@
 
 ClapTrap::ClapTrap() {
 	ClapTrap::name = "default";
-	ClapTrap::Hit_Point = 0;
-	ClapTrap::Energy_point = 0;
+	ClapTrap::Hit_Point = 10;
+	ClapTrap::Energy_point = 10;
 	ClapTrap::Attack_damage = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(std::string name) {
 	this->Hit_Point = 10;
 	this->Energy_point = 10;
 	this->Attack_damage = 0;
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "name constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
@@ -33,7 +33,7 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const ClapTrap& origin) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << " Copy constructor called" << std::endl;
 	this->name = origin.name;
 	this->Hit_Point = origin.Hit_Point;
 	this->Energy_point = origin.Energy_point;
@@ -41,7 +41,7 @@ ClapTrap::ClapTrap(const ClapTrap& origin) {
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& origin) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << " Copy assignment operator called" << std::endl;
 	this->name	= origin.name;
 	this->Hit_Point = origin.Hit_Point;
 	this->Attack_damage = origin.Attack_damage;
@@ -51,11 +51,11 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& origin) {
 
 void	ClapTrap::attack(const std::string& target) {
 	if(this->Hit_Point <= 0) {
-		std::cout << "Hit point is not enough" << std::endl;
+		std::cout << this->name << " Hit point is not enough" << std::endl;
 		return ;
 	}
 	else if (this->Energy_point <= 0) {
-		std::cout << "Energy is not enough" << std::endl;
+		std::cout << this->name << " Energy is not enough" << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->Attack_damage << " points of damage!" << std::endl;
@@ -70,11 +70,11 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if(this->Hit_Point <= 0) {
-		std::cout << this->name << "Hit point is not enough" << std::endl;
+		std::cout << this->name << " Hit point is not enough" << std::endl;
 		return ;
 	}
 	else if (this->Energy_point <= 0) {
-		std::cout << this->name << "Energy is not enough" << std::endl;
+		std::cout << this->name << " Energy is not enough" << std::endl;
 		return ;
 	}
 	Hit_Point += amount;

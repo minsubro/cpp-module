@@ -23,4 +23,9 @@ int main()
 	b.whoAmI();
 	b.attack("abc");
 	b.printinfo();
+	std::cout << "----------------------" << std::endl;
+	DiamondTrap c(a);
+	c.whoAmI();
+	c.attack("abc");
+	c.printinfo();
 }

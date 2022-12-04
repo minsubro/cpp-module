@@ -36,7 +36,7 @@ ScavTrap::ScavTrap(const ScavTrap& origin) {
 	this->Hit_Point = origin.Hit_Point;
 	this->Energy_point = origin.Energy_point;
 	this->Attack_damage = Attack_damage;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& origin) {
