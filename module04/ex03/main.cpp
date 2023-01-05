@@ -3,11 +3,11 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-void leaks() { system("leaks a.out"); }
+//void leaks() { system("leaks a.out"); }
 
 int main()
 {
-	atexit(leaks);
+	//atexit(leaks);
 	{
 		IMateriaSource *src = new MateriaSource();
 

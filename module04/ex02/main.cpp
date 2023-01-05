@@ -7,8 +7,8 @@
 int main()
 {
 	{
-		Animal animal();
-		Animal *j = new Animal();
+		//Animal animal();
+		//Animal *j = new Animal();
 	}
 	{
 		const Animal *j = new Dog();
