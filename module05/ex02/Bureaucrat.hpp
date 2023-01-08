@@ -2,6 +2,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+class AForm;
 
 class Bureaucrat {
 	private :
@@ -16,6 +17,8 @@ class Bureaucrat {
 		int	getGrade() const;
 		void	increaseGrade();
 		void	decreaseGrade();
+		void	signForm(AForm &);
+		void	executeForm(AForm const & form);
 
 		class GradeTooHighException : public std::exception {
 			public :
