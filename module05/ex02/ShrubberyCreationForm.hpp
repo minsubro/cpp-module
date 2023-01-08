@@ -3,15 +3,17 @@
 
 # include "AForm.hpp"
 
-class ShrubberyCreationFrom: public AForm {
-	public :
-		ShrubberyCreationFrom();
-		ShrubberyCreationFrom(std::string _target);
-		ShrubberyCreationFrom(const ShrubberyCreationFrom&);
-		ShrubberyCreationFrom &operator=(const ShrubberyCreationFrom&);
-		~ShrubberyCreationFrom();
+class ShrubberyCreationForm: public AForm {
+	private :
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm&);
 
-		void	execute(Bureaucrat const &executor) const
+	public :
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string _target);
+		ShrubberyCreationForm(const ShrubberyCreationForm&);
+		~ShrubberyCreationForm();
+
+		void	execute(Bureaucrat const &executor) const;
 
 
 };
