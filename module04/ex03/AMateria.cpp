@@ -19,6 +19,7 @@ AMateria	&AMateria::operator=(const AMateria& origin) {
 }
 
 void	AMateria::use(ICharacter& target) {
+	(void)target;
 	std::cout << "use?" << std::endl;
 }
 
