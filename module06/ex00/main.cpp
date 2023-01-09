@@ -1,6 +1,9 @@
 #include "iostream"
 
 int main(int ac, char **av) {
-    int i = static_cast<int>(av[1]);
-    
+    if (ac != 2) {
+		std::cout << "invaild argument";
+		return 0;
+	}
+	
 }

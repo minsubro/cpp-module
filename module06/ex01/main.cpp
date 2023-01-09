@@ -11,7 +11,14 @@ Data*   deserialize(uintptr_t raw) {
 
 int main()
 {
-    Data *data = new Data();
-    data->a = 123456;
-    
+    Data temp = Data();
+    temp.a = 42;
+    std::cout << "temp ptr = " << &temp << std::endl;
+    Data *data_ptr;
+    uintptr_t int_ptr;
+    int_ptr = serialize(&temp);
+    std::cout << "int_ptr = " << int_ptr << std::endl;
+    data_ptr = deserialize(int_ptr);
+    std::cout << "data_ptr = " << data_ptr << std::endl;
+    std::cout << data_ptr->a << std::endl;
 }
