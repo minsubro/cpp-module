@@ -4,6 +4,6 @@
 typedef struct Data
 {
     int a;
-}   Data;
+}       Data;
 
 #endif
