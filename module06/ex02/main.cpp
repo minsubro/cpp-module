@@ -43,7 +43,7 @@ void identify(Base& p) {
 	}
 }
 
-void leaks() { system("leaks a.out"); }
+//void leaks() { system("leaks a.out"); }
 
 int main()
 {
