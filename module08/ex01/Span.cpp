@@ -59,9 +59,24 @@ int Span::shortestSpan() {
     std::sort(tmp.begin(), tmp.end());
     int min = INT_MAX;
     for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end(); it++) {
-        for (std::vector<int>::iterator jt = it + 1; jt != tmp.end(); jt++) {
+        for (std::vector<int>::iterator jt = it + 1; jt != tmp.end(); jt++) { // for문 삭제
             min = std::min(min, *jt - *it);
         }
     }
     return min;;
+}
+
+void Span::expandInSize() {
+    if (this->v.size() * 2 > this->max_size) {
+        throw std::runtime_error("Array size is insufficient");
+    }
+    this->v.insert(v.end(), v.begin(), v.end());
+}
+
+size_t Span::getCurrentSize() {
+    return this->v.size();
+}
+
+size_t Span::getMaxsize() {
+    return this->max_size;
 }
