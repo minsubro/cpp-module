@@ -42,13 +42,7 @@ int Span::longestSpan() {
     if (this->v.size() < 2) {
         throw std::runtime_error("Not enough arguments.");
     }
-    int min = INT_MAX;
-    int max = 0;
-    for (std::vector<int>::iterator it = this->v.begin(); it != this->v.end(); it++) {
-        min = std::min(min, *it);
-        max = std::max(max, *it);
-    }
-    return max - min;
+    return *(std::max_element(this->v.begin(), this->v.end())) - *(std::min_element(this->v.begin(), this->v.end())); 
 }
 
 int Span::shortestSpan() {
@@ -58,10 +52,8 @@ int Span::shortestSpan() {
     std::vector<int> tmp = this->v;
     std::sort(tmp.begin(), tmp.end());
     int min = INT_MAX;
-    for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end(); it++) {
-        for (std::vector<int>::iterator jt = it + 1; jt != tmp.end(); jt++) { // for문 삭제
-            min = std::min(min, *jt - *it);
-        }
+    for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end() - 1; it++) {
+        min = std::min(min, *(it + 1) - *it);
     }
     return min;;
 }

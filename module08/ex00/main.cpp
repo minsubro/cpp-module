@@ -16,7 +16,7 @@ int main()
         std::vector<int>::iterator it;
         try
         {
-            it = ::easyfind(a, 5);
+            it = ::easyfind(a, 1);
             std::cout << "find idx = " << it - a.begin() << std::endl;
             std::cout << "find value = " << *it << std::endl;
         }
@@ -72,9 +72,4 @@ int main()
             std::cerr << e.what() << '\n';
         }
     }
-   
-
-    
-
-    
 }
