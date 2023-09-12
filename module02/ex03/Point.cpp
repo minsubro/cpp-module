@@ -6,7 +6,7 @@
 /*   By: minsukan <minsukan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 12:55:13 by minsukan          #+#    #+#             */
-/*   Updated: 2022/10/25 19:57:56 by minsukan         ###   ########.fr       */
+/*   Updated: 2023/02/13 22:01:53 by minsukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,7 @@ float	Point::getxfloat() const {
 float	Point::getyfloat() const {
 	return this->y.toFloat();
 }
+
+const int i = 5
+
+i = 7;

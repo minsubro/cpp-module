@@ -35,6 +35,7 @@ Converter::~Converter() {}
 
 
 void Converter::conversion(std::string str) {
+
    int type = getType(str);
    if (type == 4) {
        std::cout << "undefined type" << std::endl;
@@ -133,6 +134,8 @@ void    Converter::floatType(std::string str) {
 
 void    Converter::doubleType(std::string str) {
     double tmp;
+    std::string a = "123.0";
+    double a = static_cast<double>(a)
     if (str == "-inf" || str == "+inf" || str == "nan") {
         this->c = "impossible";
         this->n = "impossible";
