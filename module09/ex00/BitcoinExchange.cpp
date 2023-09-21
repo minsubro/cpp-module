@@ -104,12 +104,10 @@ void	vaildateValue(std::string v)
 
 void	vaildateInputValue(std::string v)
 {
-	char *p = NULL;
+	char *p = nullptr;
 	double value = std::strtod(v.c_str(), &p);
-	if (value == 0.0 && p) {
-		for (size_t i = 0; p[i]; i++) {
-			throw BitcoinExchange::ErrorException("Error: not a positive number.");	
-		}
+	if (p != nullptr && *p != 0) {
+		throw BitcoinExchange::ErrorException("Error: not a positive number.");	
 	}
 	if (value > 1000.0)
 		throw BitcoinExchange::ErrorException("Error: too large a number.");
@@ -131,6 +129,8 @@ void	BitcoinExchange::vaildateCsvAndSaveData()
 		throw ErrorException("Error: invaild format");
 	while (std::getline(csv, line))
 	{
+		if (line.size() == 0)
+			continue;
 		size_t pos = line.find(",");
 		if (pos == std::string::npos)
 			throw ErrorException("Error: bad input => " + line);
@@ -150,6 +150,8 @@ void	BitcoinExchange::printValue(std::string date, double value) {
 	it = this->data.find(date);
 	if (it == data.end()) {
 		it = this->data.lower_bound(date);
+		if (it == data.begin())
+			throw ErrorException("Error: bad input");
 		it--;
 	}
 	std::cout << date << " => " << value << " = " << it->second * value << std::endl; 
@@ -170,7 +172,8 @@ void	BitcoinExchange::run(std::string  fileName)
 	while (std::getline(file, line))
 	{
 		try
-		{
+		{	if (line.size() == 0)
+				continue;
 			size_t pos = line.find(" | ");
 			if (pos == std::string::npos)
 				throw ErrorException("Error: bad input => " + line);
