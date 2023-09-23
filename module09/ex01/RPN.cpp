@@ -64,7 +64,7 @@ double translateValue(std::string str) {
 	if (endPtr != nullptr && *endPtr != 0) {
 		throw RPN::Error();
 	}
-	if (ret < 1 && ret > 9) {
+	if (ret < 1 || ret > 9) {
 		throw RPN::Error();
 	}
 	return (ret);
